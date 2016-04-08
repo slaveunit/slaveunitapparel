@@ -1,0 +1,65 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :created_at %><br>
+    <%= f.datetime_select :created_at %>
+  </div>
+  <div class="field">
+    <%= f.label :updated_at %><br>
+    <%= f.datetime_select :updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :colour %><br>
+    <%= f.text_field :colour %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_file_name %><br>
+    <%= f.text_field :photo_file_name %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_content_type %><br>
+    <%= f.text_field :photo_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_file_size %><br>
+    <%= f.number_field :photo_file_size %>
+  </div>
+  <div class="field">
+    <%= f.label :photo_updated_at %><br>
+    <%= f.datetime_select :photo_updated_at %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
